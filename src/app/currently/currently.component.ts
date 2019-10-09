@@ -15,6 +15,8 @@ export class CurrentlyComponent implements OnInit {
   @Input() temperature: number;
   @Input() summary: string;
   @Input() location: string;
+  @Input() precipProb: number;
+  @Input() humidity: number;
 
   constructor() {}
 

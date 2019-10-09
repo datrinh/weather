@@ -1,8 +1,14 @@
 <mat-card class="today-card" color="primary">
   <mat-card-title>{{ location }}</mat-card-title>
-  <mat-card-subtitle>{{ summary }}</mat-card-subtitle>
+  <mat-card-subtitle>
+    <span>{{ summary }}</span>
+    <span><mat-icon>waves</mat-icon> {{ humidity * 100 }}%</span>
+    <span
+      ><mat-icon>beach_access</mat-icon> {{ precipProb * 100 }}%</span
+    ></mat-card-subtitle
+  >
   <div class="row">
-    <mat-icon class="weather-icon">cloud</mat-icon>
+    <mat-icon class="weather-icon">wb_sunny</mat-icon>
     <span class="temperature">{{ temperature }}°</span>
   </div>
 </mat-card>

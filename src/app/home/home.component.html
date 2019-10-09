@@ -13,6 +13,8 @@
       [temperature]="
         weather.formatTemperature(weatherData.currently.temperature)
       "
+      [humidity]="weatherData.currently.humidity"
+      [precipProb]="weatherData.currently.precipProbability"
     ></app-currently>
 
     <app-forecast [forecasts]="forecasts"></app-forecast>
