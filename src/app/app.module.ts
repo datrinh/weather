@@ -12,12 +12,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ForecastComponent } from './forecast/forecast.component';
 import { CurrentlyComponent } from './currently/currently.component';
 import { TemperaturePipe } from './shared/temperature.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ForecastComponent, CurrentlyComponent, TemperaturePipe],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ForecastComponent,
+    CurrentlyComponent,
+    TemperaturePipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +34,8 @@ import { TemperaturePipe } from './shared/temperature.pipe';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

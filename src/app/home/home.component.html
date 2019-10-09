@@ -6,7 +6,7 @@
     Go
   </button>
 
-  <ng-container *ngIf="weatherData">
+  <ng-container *ngIf="weatherData && !loading">
     <app-currently
       [location]="location.name"
       [summary]="weatherData.currently.summary"
@@ -20,4 +20,6 @@
       [summary]="daily.summary"
     ></app-forecast>
   </ng-container>
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
 </div>

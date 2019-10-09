@@ -10,6 +10,7 @@ import { DarkSkyResponse, DailyDatum, Daily } from '../shared/DarkSkyResponse';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  loading = false;
   location;
   weatherData: DarkSkyResponse;
   daily: Daily;
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
    * @param searchTerm search string can be location
    */
   lookUpWeather(searchTerm: string) {
+    this.loading = true;
     this.geo
       .getCoordinates(searchTerm)
       .pipe(
@@ -38,6 +40,7 @@ export class HomeComponent implements OnInit {
       .subscribe(res => {
         this.weatherData = res;
         this.daily = res.daily;
+        this.loading = false;
         console.log(res);
       });
   }
