@@ -4,6 +4,9 @@ import { GeocodingService, Coordinates } from '../shared/geocoding.service';
 import { flatMap, tap } from 'rxjs/operators';
 import { DarkSkyResponse, DailyDatum, Daily } from '../shared/DarkSkyResponse';
 
+/**
+ * TODO: Change icon/img depending on weather
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
