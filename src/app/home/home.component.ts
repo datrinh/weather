@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WeatherService } from '../shared/weather.service';
 import { GeocodingService, Coordinates } from '../shared/geocoding.service';
 import { flatMap, tap } from 'rxjs/operators';
-import { DarkSkyResponse, DailyDatum } from '../shared/DarkSkyResponse';
+import { DarkSkyResponse, DailyDatum, Daily } from '../shared/DarkSkyResponse';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { DarkSkyResponse, DailyDatum } from '../shared/DarkSkyResponse';
 export class HomeComponent implements OnInit {
   location;
   weatherData: DarkSkyResponse;
-  forecasts: DailyDatum[];
+  daily: Daily;
 
   constructor(public weather: WeatherService, private geo: GeocodingService) {}
 
@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
     this.lookUpWeather('Dresden');
   }
 
+  /**
+   * Transforms search term into coords and then requests weather data.
+   * @param searchTerm search string can be location
+   */
   lookUpWeather(searchTerm: string) {
     this.geo
       .getCoordinates(searchTerm)
@@ -33,7 +37,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe(res => {
         this.weatherData = res;
-        this.forecasts = res.daily.data.slice(0, 5);
+        this.daily = res.daily;
         console.log(res);
       });
   }

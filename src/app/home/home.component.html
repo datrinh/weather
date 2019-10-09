@@ -10,13 +10,14 @@
     <app-currently
       [location]="location.name"
       [summary]="weatherData.currently.summary"
-      [temperature]="
-        weather.formatTemperature(weatherData.currently.temperature)
-      "
+      [temperature]="weatherData.currently.temperature | temperature"
       [humidity]="weatherData.currently.humidity"
       [precipProb]="weatherData.currently.precipProbability"
     ></app-currently>
 
-    <app-forecast [forecasts]="forecasts"></app-forecast>
+    <app-forecast
+      [forecasts]="daily.data | slice: 0:5"
+      [summary]="daily.summary"
+    ></app-forecast>
   </ng-container>
 </div>

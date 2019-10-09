@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DailyDatum } from '../shared/DarkSkyResponse';
-import { WeatherService } from '../shared/weather.service';
 import { format, fromUnixTime } from 'date-fns';
 
 @Component({
@@ -10,11 +9,17 @@ import { format, fromUnixTime } from 'date-fns';
 })
 export class ForecastComponent implements OnInit {
   @Input() forecasts: DailyDatum[];
-  constructor(public weather: WeatherService) {}
+  @Input() summary: string;
+  constructor() {}
 
   ngOnInit() {}
 
-  formatWeekday(date): string {
+  /**
+   * Transforms UNIX timestamp into short week day strings.
+   * TODO: Refactor into pipe
+   * @param date UNIX timestamp
+   */
+  formatWeekday(date: number): string {
     return format(fromUnixTime(date), 'iii');
   }
 }

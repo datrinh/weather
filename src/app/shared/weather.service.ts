@@ -25,11 +25,4 @@ export class WeatherService {
       `${CORS_PREFIX}/${API_URL}/${API_KEY}/${coords.latitude},${coords.longitude}?units=ca`
     );
   }
-
-  /**
-   * Format temperature for display.
-   */
-  formatTemperature(temp: number) {
-    return Math.round(temp);
-  }
 }

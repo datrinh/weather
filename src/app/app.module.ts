@@ -14,9 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ForecastComponent } from './forecast/forecast.component';
 import { CurrentlyComponent } from './currently/currently.component';
+import { TemperaturePipe } from './shared/temperature.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ForecastComponent, CurrentlyComponent],
+  declarations: [AppComponent, HomeComponent, ForecastComponent, CurrentlyComponent, TemperaturePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
