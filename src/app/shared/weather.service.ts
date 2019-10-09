@@ -7,7 +7,10 @@ import { DarkSkyResponse } from './DarkSkyResponse';
 import { flatMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
+// Quick Fix for CORS problems
 const CORS_PREFIX = 'https://cors-anywhere.herokuapp.com';
+
+// API Docs: https://darksky.net/dev/docs#forecast-request
 const API_URL = 'https://api.darksky.net/forecast';
 const API_KEY = environment.darkSkyApiKey;
 
@@ -23,7 +26,10 @@ export class WeatherService {
     );
   }
 
-  formatTemperature(temp) {
+  /**
+   * Format temperature for display.
+   */
+  formatTemperature(temp: number) {
     return Math.round(temp);
   }
 }

@@ -13,9 +13,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ForecastComponent } from './forecast/forecast.component';
+import { CurrentlyComponent } from './currently/currently.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ForecastComponent],
+  declarations: [AppComponent, HomeComponent, ForecastComponent, CurrentlyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

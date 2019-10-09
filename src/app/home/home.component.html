@@ -2,21 +2,18 @@
   <mat-form-field>
     <input matInput placeholder="Location" value="Dresden" #searchInput />
   </mat-form-field>
-  <button mat-button (click)="lookUpWeather(searchInput.value)">Go</button>
+  <button mat-button (click)="lookUpWeather(searchInput.value)" color="primary">
+    Go
+  </button>
 
   <ng-container *ngIf="weatherData">
-    <mat-card class="today-card" color="primary">
-      <mat-card-title>{{ location.name }}</mat-card-title>
-      <mat-card-subtitle>{{ weatherData.currently.summary }}</mat-card-subtitle>
-      <div class="row">
-        <mat-icon class="weather-icon">cloud</mat-icon>
-        <span class="temperature"
-          >{{
-            weather.formatTemperature(weatherData.currently.temperature)
-          }}°</span
-        >
-      </div>
-    </mat-card>
+    <app-currently
+      [location]="location.name"
+      [summary]="weatherData.currently.summary"
+      [temperature]="
+        weather.formatTemperature(weatherData.currently.temperature)
+      "
+    ></app-currently>
 
     <app-forecast [forecasts]="forecasts"></app-forecast>
   </ng-container>

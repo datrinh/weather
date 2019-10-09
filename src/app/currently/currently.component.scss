@@ -1,0 +1,17 @@
+@import '../../styles.scss';
+.temperature {
+  font-size: 6em;
+}
+
+.weather-icon {
+  font-size: 6em;
+}
+
+.today-card {
+  background: $accent;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
