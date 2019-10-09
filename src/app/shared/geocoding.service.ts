@@ -8,6 +8,7 @@ const API_URL = 'https://eu1.locationiq.com/v1/search.php';
 const API_KEY = environment.geocodingApiKey;
 
 export interface Coordinates {
+  name?: string;
   latitude: number;
   longitude: number;
 }
@@ -25,6 +26,7 @@ export class GeocodingService {
         map((res: any) => {
           console.log('Coords:', res);
           return {
+            name: res[0].display_name,
             latitude: res[0].lat,
             longitude: res[0].lon
           };

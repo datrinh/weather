@@ -10,9 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, ForecastComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +23,9 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

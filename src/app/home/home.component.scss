@@ -1,3 +1,20 @@
 .wrapper {
   padding: 1em;
 }
+
+.temperature {
+  font-size: 6em;
+}
+
+.weather-icon {
+  font-size: 6em;
+}
+
+.today-card {
+  // background: #ffa726;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}

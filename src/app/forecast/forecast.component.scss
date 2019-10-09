@@ -1,0 +1,23 @@
+.forecast {
+  display: flex;
+}
+
+.forecast-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+
+.temp-high {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.temp-low {
+  font-size: 1em;
+  color: gray;
+}
+
+mat-card {
+  margin-top: 16px;
+}

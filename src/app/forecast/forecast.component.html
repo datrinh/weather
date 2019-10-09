@@ -1,0 +1,14 @@
+<mat-card>
+  <div class="forecast">
+    <div *ngFor="let day of forecasts" class="forecast-item">
+      <span>{{ formatWeekday(day.time) }}</span>
+      <mat-icon>cloud</mat-icon>
+      <span class="temp-high"
+        >{{ weather.formatTemperature(day.temperatureHigh) }}°</span
+      >
+      <span class="temp-low"
+        >{{ weather.formatTemperature(day.temperatureLow) }}°</span
+      >
+    </div>
+  </div>
+</mat-card>
