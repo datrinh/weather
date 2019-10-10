@@ -20,10 +20,7 @@ export class HomeComponent implements OnInit {
 
   constructor(public weather: WeatherService, private geo: GeocodingService) {}
 
-  ngOnInit() {
-    // Todo löschen
-    this.lookUpWeather('Dresden');
-  }
+  ngOnInit() {}
 
   /**
    * Transforms search term into coords and then requests weather data.
